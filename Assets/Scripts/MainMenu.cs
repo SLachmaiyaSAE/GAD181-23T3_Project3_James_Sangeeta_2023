@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
 
+    public GameObject ControlsGuide;
+
     public void PlayGame()
     {
         SceneManager.LoadSceneAsync(4);
@@ -38,5 +40,13 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(6);
     }
+
+
+    //public void Awake()
+    //{
+    //    // Need to add the "if button pressed than set to active thing. Plus a cross it top right to go back. 
+    //    ControlsGuide.SetActive(true);
+    //}
+
 
 }
