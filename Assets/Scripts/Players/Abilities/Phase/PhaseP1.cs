@@ -1,24 +1,28 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class Phase : MonoBehaviour
+public class PhaseP1 : MonoBehaviour
 {
-    public KeyCode activate; 
-    public float flashInterval = 0.2f;
-    public float phaseDuration = 3f;        
-    public float cooldownTime = 5f;
-
+    [SerializeField] private KeyCode activateKey;
+    [SerializeField] private float flashInterval = 0.5f;
+    [SerializeField] private float phaseDuration = 3f;        
+    [SerializeField] private float cooldownTime = 15f;        
 
     private Collider2D playerCollider;
     private SpriteRenderer playerRenderer;
     private bool isPhasing = false;
     private float cooldownTimer = 0f;
 
+
+    //ref to PhaseUI
+    private PhaseUIP1 phaseUI;
+
+
     private void Start()
     {
         playerCollider = GetComponent<Collider2D>();
         playerRenderer = GetComponent<SpriteRenderer>();
+        phaseUI = FindObjectOfType<PhaseUIP1>();
     }
 
     private void Update()
@@ -27,9 +31,10 @@ public class Phase : MonoBehaviour
         {
             cooldownTimer -= Time.deltaTime;
         }
-        else if (Input.GetKeyDown(activate))
+        else if (Input.GetKeyDown(activateKey))
         {
             StartPhase();
+            phaseUI.UsePhaseP1();
         }
     }
 
@@ -56,22 +61,24 @@ public class Phase : MonoBehaviour
     {
         if (isPhasing)
         {
+            //disable the collider
             playerCollider.enabled = false;
+            //start flashing the sprite
             InvokeRepeating("FlashSprite", 0f, flashInterval);
         }
         else
         {
-           
+            //re-enable collider
             playerCollider.enabled = true;
+            //stop flashing
             CancelInvoke("FlashSprite");
+            //visible sprite
             playerRenderer.enabled = true;
         }
     }
 
     private void FlashSprite()
     {
-        //toggle the visibility of the sprite
         playerRenderer.enabled = !playerRenderer.enabled;
     }
-
 }
