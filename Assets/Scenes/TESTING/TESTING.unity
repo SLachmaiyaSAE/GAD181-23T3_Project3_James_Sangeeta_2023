@@ -137,9 +137,11 @@ GameObject:
   - component: {fileID: 120224714}
   - component: {fileID: 120224713}
   - component: {fileID: 120224718}
+  - component: {fileID: 120224719}
+  - component: {fileID: 120224720}
   m_Layer: 0
   m_Name: Player 1
-  m_TagString: Untagged
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,6 +320,38 @@ MonoBehaviour:
   flashInterval: 0.2
   phaseDuration: 4
   cooldownTime: 15
+--- !u!114 &120224719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120224712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fdef59a0749d6ea4191d00e67ac6d65b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashKey: 113
+  dashSpeedIncrease: 10
+  dashDuration: 5
+  dashCooldownTime: 20
+--- !u!114 &120224720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 120224712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43c9dafc9ed16f04a87df2ade75bb81e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowKey: 102
+  slowSpeedDecrease: 15
+  slowDuration: 5
+  slowCooldown: 30
 --- !u!1 &185784446
 GameObject:
   m_ObjectHideFlags: 0
@@ -460,7 +494,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279038208
-  m_fontColor: {r: 0, g: 0.9433962, b: 0.048204638, a: 1}
+  m_fontColor: {r: 0, g: 0.9433962, b: 0.8352941, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -539,6 +573,7 @@ GameObject:
   - component: {fileID: 390793943}
   - component: {fileID: 390793942}
   - component: {fileID: 390793941}
+  - component: {fileID: 390793944}
   m_Layer: 5
   m_Name: SlowButtonP1
   m_TagString: Untagged
@@ -661,6 +696,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 390793939}
   m_CullTransparentMesh: 1
+--- !u!114 &390793944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390793939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d0a5eebe2daefb47bfa196c9269d529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCooldown: {fileID: 1860917344}
+  textCooldown: {fileID: 520327777}
 --- !u!1 &393025621
 GameObject:
   m_ObjectHideFlags: 0
@@ -807,6 +856,7 @@ GameObject:
   - component: {fileID: 437184859}
   - component: {fileID: 437184858}
   - component: {fileID: 437184857}
+  - component: {fileID: 437184860}
   m_Layer: 5
   m_Name: DashButtonP2
   m_TagString: Untagged
@@ -929,6 +979,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437184855}
   m_CullTransparentMesh: 1
+--- !u!114 &437184860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 437184855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a29647e4cdc286d43981a0f21f8124b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCooldown: {fileID: 683372092}
+  textCooldown: {fileID: 237495773}
 --- !u!1 &465434609
 GameObject:
   m_ObjectHideFlags: 0
@@ -1139,7 +1203,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279038208
-  m_fontColor: {r: 0, g: 0.9433962, b: 0.048204638, a: 1}
+  m_fontColor: {r: 0.9098039, g: 0, b: 0.94509804, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1961,7 +2025,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279038208
-  m_fontColor: {r: 0, g: 0.7743149, b: 1, a: 1}
+  m_fontColor: {r: 0, g: 0.94509804, b: 0.047058824, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2040,6 +2104,7 @@ GameObject:
   - component: {fileID: 847613481}
   - component: {fileID: 847613480}
   - component: {fileID: 847613479}
+  - component: {fileID: 847613482}
   m_Layer: 5
   m_Name: DashButtonP1
   m_TagString: Untagged
@@ -2162,6 +2227,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 847613477}
   m_CullTransparentMesh: 1
+--- !u!114 &847613482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847613477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac68885d050991448df7c1a54314cbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCooldown: {fileID: 1094509192}
+  textCooldown: {fileID: 1887754354}
 --- !u!1 &1070920905
 GameObject:
   m_ObjectHideFlags: 0
@@ -2383,6 +2462,7 @@ GameObject:
   - component: {fileID: 1098216120}
   - component: {fileID: 1098216119}
   - component: {fileID: 1098216118}
+  - component: {fileID: 1098216121}
   m_Layer: 5
   m_Name: SlowButtonP2
   m_TagString: Untagged
@@ -2505,6 +2585,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1098216116}
   m_CullTransparentMesh: 1
+--- !u!114 &1098216121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098216116}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b492d8e5fa2ffe04f99cfdb0a7a790d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageCooldown: {fileID: 1969810929}
+  textCooldown: {fileID: 1996097543}
 --- !u!1 &1133599265
 GameObject:
   m_ObjectHideFlags: 0
@@ -2898,9 +2992,11 @@ GameObject:
   - component: {fileID: 1494552039}
   - component: {fileID: 1494552038}
   - component: {fileID: 1494552043}
+  - component: {fileID: 1494552044}
+  - component: {fileID: 1494552045}
   m_Layer: 0
   m_Name: Player 2
-  m_TagString: Untagged
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3079,6 +3175,38 @@ MonoBehaviour:
   flashInterval: 0.3
   phaseDuration: 4
   cooldownTime: 15
+--- !u!114 &1494552044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494552037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e119011ad72a80b429c05edce56c65ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dashKey: 101
+  dashSpeedIncrease: 10
+  dashDuration: 5
+  dashCooldownTime: 20
+--- !u!114 &1494552045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494552037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6607e5015fa93034ab6f60062ff3afb9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slowKey: 114
+  slowSpeedDecrease: 15
+  slowDuration: 5
+  slowCooldown: 30
 --- !u!1 &1860917342
 GameObject:
   m_ObjectHideFlags: 0
@@ -3221,7 +3349,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279038208
-  m_fontColor: {r: 0, g: 0.9433962, b: 0.048204638, a: 1}
+  m_fontColor: {r: 0, g: 0.94509804, b: 0.83236957, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3716,7 +3844,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4279038208
-  m_fontColor: {r: 0, g: 0.9433962, b: 0.048204638, a: 1}
+  m_fontColor: {r: 0.90785927, g: 0, b: 0.94509804, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
