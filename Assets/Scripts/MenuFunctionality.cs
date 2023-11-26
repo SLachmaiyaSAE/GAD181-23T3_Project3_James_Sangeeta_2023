@@ -58,7 +58,7 @@ public class MenuFunctionality : MonoBehaviour
 
     public void PlayerDestroyed(string playerName)
     {
-        DisplayLoseText(playerName + " loses! Press Space to restart level");
+        DisplayLoseText(playerName + " loses!   Press Space to restart level");
         isGamePaused = true;
         Time.timeScale = 0f;
     }
