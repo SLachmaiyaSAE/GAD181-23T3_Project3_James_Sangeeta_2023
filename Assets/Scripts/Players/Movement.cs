@@ -5,24 +5,25 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    //public KeyCode up;
-    //public KeyCode down;
-    //public KeyCode left;
-    //public KeyCode right;
-
-
-    public string horizontalAxis;
-    public string verticalAxis;
+    public KeyCode up;
+    public KeyCode down;
+    public KeyCode left;
+    public KeyCode right;
 
     public float speed = 16;
 
-    //wall prefab.
+    public float inputCooldown = 0.1f;
+
+    //timestamp of last input
+    private float lastInputTime;
+
     public GameObject wallPrefab;
     //current wall.
     Collider2D wall;
     //last wall's end.
     Vector2 lastWallEnd;
 
+    //ref to menu functionality
     public MenuFunctionality menuFunctionality;
 
 
@@ -39,19 +40,36 @@ public class Movement : MonoBehaviour
     {
         if (!menuFunctionality.IsGamePaused())
         {
-            float horizontalInput = Input.GetAxis(horizontalAxis);
-            float verticalInput = Input.GetAxis(verticalAxis);
-
-            // Check for non-zero input to avoid spawning walls when there's no movement
-            if (horizontalInput != 0 || verticalInput != 0)
+            if (Time.time - lastInputTime >= inputCooldown)
             {
-                currentDirection = new Vector2(horizontalInput, verticalInput).normalized;
-                GetComponent<Rigidbody2D>().velocity = currentDirection * speed;
-                SpawnWall();
+                //check for input cooldown before processing new input
+                if (Input.GetKeyDown(up) && currentDirection != Vector2.down)
+                {
+                    HandleInput(Vector2.up);
+                }
+                else if (Input.GetKeyDown(down) && currentDirection != Vector2.up)
+                {
+                    HandleInput(-Vector2.up);
+                }
+                else if (Input.GetKeyDown(left) && currentDirection != Vector2.right)
+                {
+                    HandleInput(-Vector2.right);
+                }
+                else if (Input.GetKeyDown(right) && currentDirection != Vector2.left)
+                {
+                    HandleInput(Vector2.right);
+                }
             }
 
             FitColliderBetween(wall, lastWallEnd, transform.position);
         }
+    }
+    void HandleInput(Vector2 direction)
+    {
+        currentDirection = direction;
+        GetComponent<Rigidbody2D>().velocity = currentDirection * speed;
+        SpawnWall();
+        lastInputTime = Time.time;  //timestamp of the last input
     }
 
     void SpawnWall()

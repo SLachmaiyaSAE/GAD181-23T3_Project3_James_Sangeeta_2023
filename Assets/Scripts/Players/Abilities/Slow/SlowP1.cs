@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlowP1 : MonoBehaviour
 {
     public KeyCode slowKey;
-    public float slowSpeedDecrease = 15f;
+    public float slowSpeedDecrease = 10f;
     public float slowDuration = 5f;
     public float slowCooldown = 30f;
 
