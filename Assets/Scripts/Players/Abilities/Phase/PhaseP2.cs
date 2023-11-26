@@ -17,7 +17,9 @@ public class PhaseP2 : MonoBehaviour
     //ref to PhaseUI
     private PhaseUIP2 phaseUI;
 
-    
+    private float playAreaWidth = 140.3f;
+    private float playAreaHeight = 140.8f;
+
     private void Start()
     {
         playerCollider = GetComponent<Collider2D>();
@@ -35,6 +37,14 @@ public class PhaseP2 : MonoBehaviour
         {
             StartPhase();
             phaseUI.UsePhaseP2();
+        }
+
+        if (isPhasing)
+        {
+            //check for player movement during phasing and restrict it within the play area
+            float newX = Mathf.Clamp(transform.position.x, -playAreaWidth / 2, playAreaWidth / 2);
+            float newY = Mathf.Clamp(transform.position.y, -playAreaHeight / 2, playAreaHeight / 2);
+            transform.position = new Vector3(newX, newY, transform.position.z);
         }
     }
 

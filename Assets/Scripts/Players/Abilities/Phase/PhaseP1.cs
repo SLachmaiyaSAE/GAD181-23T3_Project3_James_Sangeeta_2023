@@ -17,6 +17,9 @@ public class PhaseP1 : MonoBehaviour
     //ref to PhaseUI
     private PhaseUIP1 phaseUI;
 
+    private float playAreaWidth = 140.3f;
+    private float playAreaHeight = 140.8f;
+
 
     private void Start()
     {
@@ -35,6 +38,14 @@ public class PhaseP1 : MonoBehaviour
         {
             StartPhase();
             phaseUI.UsePhaseP1();
+        }
+
+        if (isPhasing)
+        {
+            //check for player movement during phasing and restrict it within the play area
+            float newX = Mathf.Clamp(transform.position.x, -playAreaWidth / 2, playAreaWidth / 2);
+            float newY = Mathf.Clamp(transform.position.y, -playAreaHeight / 2, playAreaHeight / 2);
+            transform.position = new Vector3(newX, newY, transform.position.z);
         }
     }
 
