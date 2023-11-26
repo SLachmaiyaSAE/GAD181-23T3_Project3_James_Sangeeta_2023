@@ -158,12 +158,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd42f301294452e44a6c6e8566870992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 119
-  down: 115
-  left: 97
-  right: 100
+  horizontalAxis: WS
+  verticalAxis: AD
   speed: 20
-  wallPrefab: {fileID: 2888831400095633891, guid: 0380125dadf9f3c42b5927e53840e774, type: 3}
+  wallPrefab: {fileID: 8891716481267681036, guid: 969158e15246e6742a6ff6ed79e70c8c, type: 3}
   menuFunctionality: {fileID: 747514512}
 --- !u!50 &120224714
 Rigidbody2D:
@@ -3013,12 +3011,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd42f301294452e44a6c6e8566870992, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  up: 273
-  down: 274
-  left: 276
-  right: 275
+  horizontalAxis: 
+  verticalAxis: 
   speed: 20
-  wallPrefab: {fileID: 5435990467856200221, guid: d87d64551db2c0f4fb12180a7ccca92d, type: 3}
+  wallPrefab: {fileID: 6803607064057044340, guid: 89805b0ea71078d47b7c1a2c058707cf, type: 3}
   menuFunctionality: {fileID: 747514512}
 --- !u!50 &1494552039
 Rigidbody2D:

@@ -5,10 +5,14 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
-    public KeyCode up;
-    public KeyCode down;
-    public KeyCode left;
-    public KeyCode right;
+    //public KeyCode up;
+    //public KeyCode down;
+    //public KeyCode left;
+    //public KeyCode right;
+
+
+    public string horizontalAxis;
+    public string verticalAxis;
 
     public float speed = 16;
 
@@ -35,35 +39,19 @@ public class Movement : MonoBehaviour
     {
         if (!menuFunctionality.IsGamePaused())
         {
+            float horizontalInput = Input.GetAxis(horizontalAxis);
+            float verticalInput = Input.GetAxis(verticalAxis);
 
-        
-            if (Input.GetKeyDown(up) && currentDirection != Vector2.down)
+            // Check for non-zero input to avoid spawning walls when there's no movement
+            if (horizontalInput != 0 || verticalInput != 0)
             {
-                currentDirection = Vector2.up;
-                GetComponent<Rigidbody2D>().velocity = currentDirection * speed;
-                SpawnWall();
-            }
-            if (Input.GetKeyDown(down) && currentDirection != Vector2.up)
-            {
-                currentDirection = -Vector2.up;
-                GetComponent<Rigidbody2D>().velocity = currentDirection * speed;
-                SpawnWall();
-            }
-            if (Input.GetKeyDown(left) && currentDirection != Vector2.right)
-            {
-                currentDirection = -Vector2.right;
-                GetComponent<Rigidbody2D>().velocity = currentDirection * speed;
-                SpawnWall();
-            }
-            if (Input.GetKeyDown(right) && currentDirection != Vector2.left)
-            {
-                currentDirection = Vector2.right;
+                currentDirection = new Vector2(horizontalInput, verticalInput).normalized;
                 GetComponent<Rigidbody2D>().velocity = currentDirection * speed;
                 SpawnWall();
             }
 
             FitColliderBetween(wall, lastWallEnd, transform.position);
-            }
+        }
     }
 
     void SpawnWall()

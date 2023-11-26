@@ -6,46 +6,46 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
+    path: Assets/Scenes/Menus/MainMenu.unity
     guid: e6c701fb965652646b6aed60fe81e14b
   - enabled: 0
     path: Assets/Scenes/LevelsButton.unity
     guid: 525adee0d4e46e84b8dccdd4a1637433
   - enabled: 0
-    path: Assets/Scenes/Options.unity
+    path: Assets/Scenes/Menus/Options.unity
     guid: 877fee79a1f03d74189cbf29619e61dd
   - enabled: 0
     path: Assets/Scenes/Credits.unity
     guid: 72a763d1b0a4f5e458cd5f868bc54019
   - enabled: 1
-    path: Assets/Scenes/LevelOne.unity
+    path: Assets/Scenes/Levels/LevelOne.unity
     guid: b6890fee33a1ce24483aabf031030c11
   - enabled: 1
-    path: Assets/Scenes/LevelTwo.unity
+    path: Assets/Scenes/Levels/LevelTwo.unity
     guid: 19c5255b695b39247be0ae1eaec48ec1
   - enabled: 1
-    path: Assets/Scenes/LevelThree.unity
+    path: Assets/Scenes/Levels/LevelThree.unity
     guid: 05c6a4077f8f934498c862cd44167739
   - enabled: 1
-    path: Assets/Scenes/LevelFour.unity
+    path: Assets/Scenes/Levels/LevelFour.unity
     guid: 7cad58881ca66c54d977c9d87ce670e0
   - enabled: 1
-    path: Assets/Scenes/LevelFive.unity
+    path: Assets/Scenes/Levels/LevelFive.unity
     guid: 88639e66551bf96428954e651913c2da
   - enabled: 1
-    path: Assets/Scenes/LevelSix.unity
+    path: Assets/Scenes/Levels/LevelSix.unity
     guid: 3aa9d66a2bb66ad4180af889b4bc95d0
   - enabled: 1
-    path: Assets/Scenes/LevelSeven.unity
+    path: Assets/Scenes/Levels/LevelSeven.unity
     guid: e7d69d1d840267b47a5777f9f3286cc6
   - enabled: 1
-    path: Assets/Scenes/LevelEight.unity
+    path: Assets/Scenes/Levels/LevelEight.unity
     guid: 6526e85c3432a7a49b65e19920aaead9
   - enabled: 1
-    path: Assets/Scenes/LevelNine.unity
+    path: Assets/Scenes/Levels/LevelNine.unity
     guid: 8dbd38b48aab6b6478af2b6020929eb2
   - enabled: 1
-    path: Assets/Scenes/LevelTen.unity
+    path: Assets/Scenes/Levels/LevelTen.unity
     guid: fb45da93690039543969e1478291c444
   - enabled: 0
     path: Assets/Scenes/SampleScene.unity
