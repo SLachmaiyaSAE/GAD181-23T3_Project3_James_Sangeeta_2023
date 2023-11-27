@@ -20,6 +20,16 @@ public class MenuFunctionality : MonoBehaviour
         {
             RestartGame();
         }
+
+        //temporary menu controls
+        if (Input.GetKeyDown(KeyCode.Return))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        if (Input.GetKeyDown(KeyCode.Tab))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
     private void Start()
     {
