@@ -2965,7 +2965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6607e5015fa93034ab6f60062ff3afb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  slowKey: 264
+  slowKey: 265
   slowSpeedDecrease: 10
   slowDuration: 5
   slowCooldown: 30
