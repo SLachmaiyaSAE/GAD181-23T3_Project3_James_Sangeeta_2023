@@ -1631,9 +1631,6 @@ GameObject:
   - component: {fileID: 910201522}
   - component: {fileID: 910201521}
   - component: {fileID: 910201520}
-  - component: {fileID: 910201519}
-  - component: {fileID: 910201518}
-  - component: {fileID: 910201517}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player1
@@ -1641,54 +1638,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &910201517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910201516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43c9dafc9ed16f04a87df2ade75bb81e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slowKey: 51
-  slowSpeedDecrease: 10
-  slowDuration: 5
-  slowCooldown: 30
---- !u!114 &910201518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910201516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2c439c07e2353014c80e0a94ee28b4ce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateKey: 49
-  flashInterval: 0.3
-  phaseDuration: 3
-  cooldownTime: 15
---- !u!114 &910201519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 910201516}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fdef59a0749d6ea4191d00e67ac6d65b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashKey: 50
-  dashSpeedIncrease: 10
-  dashDuration: 5
-  dashCooldownTime: 20
 --- !u!114 &910201520
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3625,9 +3574,6 @@ GameObject:
   - component: {fileID: 1628292018}
   - component: {fileID: 1628292017}
   - component: {fileID: 1628292016}
-  - component: {fileID: 1628292015}
-  - component: {fileID: 1628292014}
-  - component: {fileID: 1628292013}
   m_Layer: 0
   m_Name: Player 2
   m_TagString: Player2
@@ -3635,54 +3581,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1628292013
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628292012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6607e5015fa93034ab6f60062ff3afb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slowKey: 264
-  slowSpeedDecrease: 10
-  slowDuration: 5
-  slowCooldown: 30
---- !u!114 &1628292014
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628292012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 57b4653e48fab4740960c0fd4479fedb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  activateKey: 263
-  flashInterval: 0.5
-  phaseDuration: 3
-  cooldownTime: 15
---- !u!114 &1628292015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1628292012}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e119011ad72a80b429c05edce56c65ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dashKey: 264
-  dashSpeedIncrease: 10
-  dashDuration: 5
-  dashCooldownTime: 20
 --- !u!114 &1628292016
 MonoBehaviour:
   m_ObjectHideFlags: 0
