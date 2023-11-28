@@ -2157,7 +2157,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 1, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2754,7 +2754,7 @@ MonoBehaviour:
   right: 100
   speed: 16
   inputCooldown: 0.1
-  wallPrefab: {fileID: 6803607064057044340, guid: 89805b0ea71078d47b7c1a2c058707cf, type: 3}
+  wallPrefab: {fileID: 5588852130802120004, guid: 58628e0cc584b7c45863a02a64b56233, type: 3}
   menuFunctionality: {fileID: 1492825480}
 --- !u!50 &1149057124
 Rigidbody2D:
@@ -2933,7 +2933,7 @@ MonoBehaviour:
   right: 259
   speed: 16
   inputCooldown: 0.1
-  wallPrefab: {fileID: 4620258681069041886, guid: 6ffa399364ea4d04d824de8000522c58, type: 3}
+  wallPrefab: {fileID: 3638515766631645707, guid: c32f4eda17d5c064989a5fc77e2921d7, type: 3}
   menuFunctionality: {fileID: 1492825480}
 --- !u!50 &1174898042
 Rigidbody2D:

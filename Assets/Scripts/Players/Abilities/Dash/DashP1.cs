@@ -27,7 +27,7 @@ public class DashP1 : MonoBehaviour
         if (Input.GetKeyDown(dashKey) && !isDashing)
         {
             StartCoroutine(Dash());
-
+            GetComponent<Rigidbody2D>().velocity = movementScript.currentDirection * movementScript.speed;
             dashUI.UseDashP1();
         }
     }

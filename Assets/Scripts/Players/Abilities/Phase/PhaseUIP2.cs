@@ -11,7 +11,7 @@ public class PhaseUIP2 : MonoBehaviour
 
     //variables for cooldown
     private bool isCooldown = false;
-    private float cooldownTime = 15f;
+    private float cooldownTime = 18f;
     private float cooldownTimer = 0f;
 
     void Start()

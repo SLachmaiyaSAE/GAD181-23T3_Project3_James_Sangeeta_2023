@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections.LowLevel.Unsafe;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Rendering.UI;
 
 public class Movement : MonoBehaviour
 {
@@ -27,7 +29,7 @@ public class Movement : MonoBehaviour
     public MenuFunctionality menuFunctionality;
 
 
-    Vector2 currentDirection;
+    public Vector2 currentDirection;
 
     private void Start()
     {

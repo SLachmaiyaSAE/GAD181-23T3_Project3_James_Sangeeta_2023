@@ -11,7 +11,7 @@ public class SlowUIP1 : MonoBehaviour
 
     //variables for cooldown
     private bool isCooldown = false;
-    private float cooldownTime = 30f;
+    private float cooldownTime = 35f;
     private float cooldownTimer = 0f;
 
     void Start()
