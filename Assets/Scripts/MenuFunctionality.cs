@@ -8,6 +8,7 @@ using UnityEngine.Rendering;
 public class MenuFunctionality : MonoBehaviour
 {
     public TextMeshProUGUI LoseText;
+    public GameObject LosePanel;
 
     public GameObject player1;
     public GameObject player2;
@@ -64,11 +65,12 @@ public class MenuFunctionality : MonoBehaviour
     {
         LoseText.text = text;
         LoseText.gameObject.SetActive(true);
+        LosePanel.gameObject.SetActive(true);
     }
 
     public void PlayerDestroyed(string playerName)
     {
-        DisplayLoseText(playerName + " loses!   Press Space to restart level");
+        DisplayLoseText(playerName + " loses! ");
         isGamePaused = true;
         Time.timeScale = 0f;
     }
