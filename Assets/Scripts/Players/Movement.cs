@@ -13,6 +13,7 @@ public class Movement : MonoBehaviour
     public KeyCode right;
 
     public float speed = 16;
+    public float speedMultiplier = 1.0f;
 
     public float inputCooldown = 0.1f;
 
@@ -28,6 +29,9 @@ public class Movement : MonoBehaviour
     //ref to menu functionality
     public MenuFunctionality menuFunctionality;
 
+    public DashAbilityPickup dashPickup;
+
+    private bool isDashActive = false;
 
     public Vector2 currentDirection;
 
@@ -69,14 +73,25 @@ public class Movement : MonoBehaviour
     void HandleInput(Vector2 direction)
     {
         currentDirection = direction;
-        GetComponent<Rigidbody2D>().velocity = currentDirection * speed;
+
+        if (!isDashActive)
+        {
+            //apply speed boost.
+            GetComponent<Rigidbody2D>().velocity = currentDirection * speed * speedMultiplier;
+        }
+        else
+        {
+            //regular movement without speed boost.
+            GetComponent<Rigidbody2D>().velocity = currentDirection * speed;
+        }
+
         SpawnWall();
-        lastInputTime = Time.time;  //timestamp of the last input
+        lastInputTime = Time.time;  //timestamp of the last input.
     }
 
     void SpawnWall()
     {
-        //save last wall's position
+        //save last wall's position.
         lastWallEnd = transform.position;
 
         //spawn a new lightwall.
@@ -86,10 +101,10 @@ public class Movement : MonoBehaviour
 
     void FitColliderBetween(Collider2D co, Vector2 a, Vector2 b)
     {
-        //calculate the centre position
+        //calculate the centre position.
         co.transform.position = a + (b - a) * 0.5f;
 
-        //Scale it horizontally or vertically 
+        //scale it horizontally or vertically.
         float dist = Vector2.Distance(a, b);
         if (a.x != b.x)
         {
@@ -101,13 +116,52 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D co)
+    private void OnTriggerEnter2D(Collider2D otherCollider)
     {
-        //not the current wall
-        if (co != wall)
+        if (otherCollider.CompareTag("Ability"))
         {
-            menuFunctionality.PlayerDestroyed(name);
-            Destroy(gameObject);
+            DashAbilityPickup dashPickup = otherCollider.GetComponent<DashAbilityPickup>();
+            if (dashPickup != null)
+            {
+                Debug.Log("Dash ability picked up");
+                //activate dash ability.
+                StartCoroutine(ActivateDash(dashPickup.duration, dashPickup.speedMultiplier));
+            }
         }
+        else
+        {
+            if (otherCollider != wall)
+            {
+                //menuFunctionality.PlayerDestroyed(name);
+                Debug.Log("Player has been destroyed");
+                Destroy(gameObject);
+            }
+        }
+    }
+
+    public void ActivateDashAbility(float duration, float speedMultiplier)
+    {
+        if (!isDashActive)
+        {
+            StartCoroutine(ActivateDash(duration, speedMultiplier));
+        }
+    }
+
+    private IEnumerator ActivateDash(float duration, float speedMultiplier)
+    {
+        Debug.Log("Dash ability activated");
+
+        isDashActive = true;
+
+        //increase player speed.
+        speed *= speedMultiplier;
+
+        //wait for the specified duration.
+        yield return new WaitForSeconds(duration);
+
+        //reset player speed to the original value.
+        speed /= speedMultiplier;
+
+        isDashActive = false;
     }
 }

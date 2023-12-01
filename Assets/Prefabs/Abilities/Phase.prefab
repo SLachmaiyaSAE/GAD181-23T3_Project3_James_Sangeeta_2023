@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2172597984758630328}
   - component: {fileID: 9020657588112032699}
   m_Layer: 0
-  m_Name: PhaseIcon
-  m_TagString: Untagged
+  m_Name: Phase
+  m_TagString: Ability
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

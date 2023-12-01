@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 666149507136271177}
   - component: {fileID: 8887864027571028686}
   m_Layer: 0
-  m_Name: SlowIcon
-  m_TagString: Untagged
+  m_Name: Slow
+  m_TagString: Ability
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
