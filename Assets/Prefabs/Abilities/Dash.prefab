@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3349969503158675799}
   - component: {fileID: 2969215836740930568}
   - component: {fileID: 5311323407180585580}
+  - component: {fileID: 8968307062036543800}
   m_Layer: 0
   m_Name: Dash
   m_TagString: Ability
@@ -145,3 +146,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedMultiplier: 1.5
   duration: 5
+--- !u!225 &8968307062036543800
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 13449030320067073}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

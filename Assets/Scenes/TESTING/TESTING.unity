@@ -8658,7 +8658,12 @@ MonoBehaviour:
   - {fileID: 722542103}
   - {fileID: 1580330875}
   spawnObjects:
+  - {fileID: 6333500714501179467, guid: effdc7e11c90a5242bdbcb3ba9513456, type: 3}
+  - {fileID: 6634372546161011946, guid: 9bb1c76167d6a654b9668fb8f913bf13, type: 3}
   - {fileID: 13449030320067073, guid: fcfd88c93e3411647ae0fa96d7c84911, type: 3}
+  abilityLifetime: 10
+  flashStartTime: 5
+  flashInterval: 0.5
 --- !u!4 &1448418787
 Transform:
   m_ObjectHideFlags: 0
