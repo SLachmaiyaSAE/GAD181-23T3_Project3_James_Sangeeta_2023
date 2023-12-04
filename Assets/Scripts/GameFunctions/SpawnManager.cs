@@ -10,6 +10,8 @@ public class SpawnManager : MonoBehaviour
     public float flashStartTime = 5f;
     public float flashInterval = 0.5f;
 
+    
+
     void Start()
     {
         StartCoroutine(SpawnObjects());

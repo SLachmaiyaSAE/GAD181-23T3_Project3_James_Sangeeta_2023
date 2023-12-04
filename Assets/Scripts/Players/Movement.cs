@@ -32,8 +32,10 @@ public class Movement : MonoBehaviour
 
     //dash stuff.
     private bool isDashActive = false;
-
     public Vector2 currentDirection;
+
+    public GameObject PlayerOneDashParticleSystem;
+    public GameObject PlayerTwoDashParticleSystem;
 
     //phase stuff.
     private bool isPhasing = false;
@@ -42,9 +44,15 @@ public class Movement : MonoBehaviour
     private float playAreaHeight = 140.8f;
     public bool IsPhasing => isPhasing;
 
+    public GameObject PlayerOnePhaseParticleSystem;
+    public GameObject PlayerTwoPhaseParticleSystem;
+
     //slow stuff
     private bool isSlowing = false;
     public bool IsSlowing => isSlowing;
+
+    public GameObject PlayerOneSlowOtherParticleSystem;
+    public GameObject PlayerTwoSlowOtherParticleSystem;
 
     private void Start()
     {
@@ -52,6 +60,13 @@ public class Movement : MonoBehaviour
         GetComponent<Rigidbody2D>().velocity = Vector2.up * speed;
         SpawnWall();
         currentDirection = Vector2.up;
+        PlayerOneDashParticleSystem.gameObject.SetActive(false);
+        PlayerTwoDashParticleSystem.gameObject.SetActive(false);
+        PlayerOnePhaseParticleSystem.gameObject.SetActive(false);
+        PlayerTwoPhaseParticleSystem.gameObject.SetActive(false);
+        PlayerOneSlowOtherParticleSystem.gameObject.SetActive(false);
+        PlayerTwoSlowOtherParticleSystem.gameObject.SetActive(false);
+
     }
     void Update()
     {
@@ -87,6 +102,7 @@ public class Movement : MonoBehaviour
                 float newX = Mathf.Clamp(transform.position.x, -playAreaWidth / 2, playAreaWidth / 2);
                 float newY = Mathf.Clamp(transform.position.y, -playAreaHeight / 2, playAreaHeight / 2);
                 transform.position = new Vector3(newX, newY, transform.position.z);
+                
             }
         }
     }
@@ -98,6 +114,7 @@ public class Movement : MonoBehaviour
         {
             //apply speed boost.
             GetComponent<Rigidbody2D>().velocity = currentDirection * speed * speedMultiplier;
+            
         }
         else
         {
@@ -146,6 +163,17 @@ public class Movement : MonoBehaviour
                 Debug.Log("Dash ability picked up");
                 //activate dash ability.
                 StartCoroutine(ActivateDash(dashPickup.duration, dashPickup.speedMultiplier));
+                string playerTag = gameObject.tag;
+
+                if(playerTag == "Player1")
+                {
+                    PlayerOneDashParticleSystem.gameObject.SetActive(true);
+                }
+                
+                else if (playerTag == "Player2")
+                {
+                    PlayerTwoDashParticleSystem.gameObject.SetActive(true);
+                }        
             }
         }
         else
@@ -198,6 +226,18 @@ public class Movement : MonoBehaviour
             {
                 InvokeRepeating("FlashSprite", 0f, flashInterval);
                 isFlashing = true;
+
+                string playerTag = gameObject.tag;
+
+                if (playerTag == "Player1")
+                {
+                    PlayerOnePhaseParticleSystem.gameObject.SetActive(true);
+                }
+
+                else if (playerTag == "Player2")
+                {
+                    PlayerTwoPhaseParticleSystem.gameObject.SetActive(true);
+                }
             }
         }
         else
@@ -237,6 +277,18 @@ public class Movement : MonoBehaviour
         speed -= slowSpeedDecrease;
 
         StartCoroutine(EndSlow(slowSpeedDecrease, slowDuration));
+
+        string playerTag = gameObject.tag;
+
+        if (playerTag == "Player1")
+        {
+            PlayerOneSlowOtherParticleSystem.gameObject.SetActive(true);
+        }
+
+        else if (playerTag == "Player2")
+        {
+            PlayerTwoSlowOtherParticleSystem.gameObject.SetActive(true);
+        }
     }
 
     private IEnumerator EndSlow(float slowSpeedDecrease, float slowDuration)
