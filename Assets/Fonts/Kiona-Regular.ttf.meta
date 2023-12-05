@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bec3c576d3f37c84db30e166d7d9e5d5
+guid: 0e53c63d264363c4b98b5d32ffa58ad5
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Digital Dare
+  - Kiona
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0

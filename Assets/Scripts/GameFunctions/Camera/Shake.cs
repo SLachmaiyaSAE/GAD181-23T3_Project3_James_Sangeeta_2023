@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -9,11 +10,15 @@ public class Shake : MonoBehaviour
     public bool start = false;
     public AnimationCurve curve;
 
+    private void Start()
+    {
+        start = false;
+    }
     private void Update()
     {
         if (start)
         {
-            start = false;
+            
             StartCoroutine(Shaking());
         }
     }
