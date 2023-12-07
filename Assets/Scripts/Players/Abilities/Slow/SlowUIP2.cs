@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PhaseUIP2 : MonoBehaviour
+public class SlowUIP2 : MonoBehaviour
 {
     [SerializeField] private Image imageCooldown;
     [SerializeField] private TMP_Text textCooldown;
@@ -13,6 +13,8 @@ public class PhaseUIP2 : MonoBehaviour
     private bool isCooldown = false;
     private float cooldownTime = 5f;
     private float cooldownTimer = 0f;
+
+    public SlowUIManager slowUIManager;
 
     void Start()
     {
@@ -48,18 +50,8 @@ public class PhaseUIP2 : MonoBehaviour
         }
     }
 
-    public void UsePhaseP2()
+    public void UseSlowP2()
     {
-        if (isCooldown) //not availiable 
-        {
-            //player has used the phase
-        }
-        else
-        {
-            isCooldown = true;
-            textCooldown.gameObject.SetActive(true);
-            cooldownTimer = cooldownTime;
-
-        }
+        slowUIManager.UseSlow(2);
     }
 }

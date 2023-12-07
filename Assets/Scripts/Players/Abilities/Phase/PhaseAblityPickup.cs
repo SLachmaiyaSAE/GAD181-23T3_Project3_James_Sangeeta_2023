@@ -7,9 +7,7 @@ public class PhaseAbilityPickup : MonoBehaviour
     [SerializeField] private float phaseDuration = 5f;
     [SerializeField] private float flashInterval = 0.5f;
 
-    public PhaseUIP1 PhaseUI1;
-    public PhaseUIP2 PhaseUI2;
-
+    public PhaseUIManager phaseUIManager;
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
     {
@@ -25,7 +23,7 @@ public class PhaseAbilityPickup : MonoBehaviour
 
             //destroy the pickup object.
             Destroy(gameObject);
-            PhaseUI1.UsePhaseP1();
+            PhaseUIManager.Instance.UsePhase(1);
         }
 
         if (otherCollider.CompareTag("Player2"))
@@ -40,7 +38,7 @@ public class PhaseAbilityPickup : MonoBehaviour
 
             //destroy the pickup object.
             Destroy(gameObject);
-            PhaseUI2.UsePhaseP2();
+            PhaseUIManager.Instance.UsePhase(2);
         }
     }
 

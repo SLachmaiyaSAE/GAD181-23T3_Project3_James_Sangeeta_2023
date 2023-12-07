@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class PhaseUIP1 : MonoBehaviour
+public class DashUIP1 : MonoBehaviour
 {
     [SerializeField] private Image imageCooldown;
     [SerializeField] private TMP_Text textCooldown;
@@ -14,6 +14,7 @@ public class PhaseUIP1 : MonoBehaviour
     private float cooldownTime = 5f;
     private float cooldownTimer = 0f;
 
+    public DashUIManager dashUIManager;
     void Start()
     {
         textCooldown.gameObject.SetActive(false);
@@ -21,7 +22,7 @@ public class PhaseUIP1 : MonoBehaviour
 
     }
 
-    
+
     void Update()
     {
         if (isCooldown)
@@ -48,18 +49,8 @@ public class PhaseUIP1 : MonoBehaviour
         }
     }
 
-    public void UsePhaseP1()
+    public void UseDashP1()
     {
-        if (isCooldown) //not availiable 
-        {
-            //player has used the phase
-        }
-        else
-        {
-            isCooldown = true;
-            textCooldown.gameObject.SetActive(true);
-            cooldownTimer = cooldownTime;
-            
-        }
+        dashUIManager.UseDash(1);
     }
 }

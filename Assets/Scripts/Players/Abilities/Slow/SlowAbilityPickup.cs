@@ -19,6 +19,8 @@ public class SlowAbilityPickup : MonoBehaviour
                 //slow down the other player.
                 StartCoroutine(SlowOpponent(playerMovement));
             }
+            int playerNumber = otherCollider.CompareTag("Player1") ? 1 : 2;
+            SlowUIManager.Instance.UseSlow(playerNumber);
 
             //destroy the pickup object.
             Destroy(gameObject);

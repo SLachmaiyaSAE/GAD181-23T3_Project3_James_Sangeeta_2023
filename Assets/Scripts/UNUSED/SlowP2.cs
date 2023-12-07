@@ -7,7 +7,7 @@ public class SlowP2 : MonoBehaviour
     public KeyCode slowKey;
     public float slowSpeedDecrease = 10f;
     public float slowDuration = 5f;
-    public float slowCooldown = 30f;
+    public float slowCooldown = 5f;
 
     private Movement otherPlayerMovement;
     private bool isSlowing = false;

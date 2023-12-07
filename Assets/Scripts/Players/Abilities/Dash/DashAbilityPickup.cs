@@ -19,7 +19,12 @@ public class DashAbilityPickup : MonoBehaviour
                 playerMovement.ActivateDashAbility(duration, speedMultiplier);
             }
 
-            //destroy the pickup object.
+
+            // Inform DashUIManager about the dash pickup
+            int playerNumber = other.CompareTag("Player1") ? 1 : 2;
+            DashUIManager.Instance.UseDash(playerNumber);
+
+            // Destroy the pickup object.
             Destroy(gameObject);
         }
     }
