@@ -2,47 +2,60 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
-
+using Cinemachine;
 
 public class Shake : MonoBehaviour
 {
-    public float duration = 1f;
-    public bool start = false;
-    public AnimationCurve curve;
+    private CinemachineVirtualCamera CinemachineVirtualCamera;
+    private float shakeIntensity = 10f;
+    private float shakeTime = 2f; // Set the shake duration to 2 seconds
+
+    private float timer;
+    private CinemachineBasicMultiChannelPerlin _cbmp;
+
+    private void Awake()
+    {
+        CinemachineVirtualCamera = GetComponent<CinemachineVirtualCamera>();
+        _cbmp = CinemachineVirtualCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+    }
 
     private void Start()
     {
-        start = false;
+        StopShake();
     }
+
+    void ShakeCamera()
+    {
+        if (timer <= 0)
+        {
+            _cbmp.m_AmplitudeGain = shakeIntensity;
+            timer = shakeTime;
+        }
+    }
+
+    void StopShake()
+    {
+        _cbmp.m_AmplitudeGain = 0f;
+        timer = 0;
+    }
+
     private void Update()
     {
-        if (start)
+        if (GameObject.FindWithTag("Player1") == null || GameObject.FindWithTag("Player2") == null)
         {
-            
-            StartCoroutine(Shaking());
+            ShakeCamera();
         }
-    }
-
-    IEnumerator Shaking()
-    {
-        Vector2 startPosition = transform.localPosition; // Use localPosition for local space
-        float elapsedTime = 0f;
-
-        while (elapsedTime < duration)
+        else
         {
-            elapsedTime += Time.deltaTime;
-            float strength = curve.Evaluate(elapsedTime / duration);
+            if (timer > 0)
+            {
+                timer -= Time.deltaTime;
 
-            // Multiply the random offset by the strength
-            Vector2 offset = Random.insideUnitCircle * strength;
-
-            // Apply the offset to the local position
-            transform.localPosition = startPosition + offset;
-
-            yield return null;
+                if (timer <= 0)
+                {
+                    StopShake();
+                }
+            }
         }
-
-        // Reset to the original position
-        transform.localPosition = startPosition;
     }
 }
