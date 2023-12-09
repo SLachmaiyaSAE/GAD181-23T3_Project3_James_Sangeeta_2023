@@ -7197,7 +7197,7 @@ MonoBehaviour:
   speed: 16
   speedMultiplier: 1.5
   inputCooldown: 0.1
-  wallPrefab: {fileID: 5819481214006689167, guid: 306b714883efff747a04cfc56b1c0ebf, type: 3}
+  wallPrefab: {fileID: 8891716481267681036, guid: 969158e15246e6742a6ff6ed79e70c8c, type: 3}
   menuFunctionality: {fileID: 91849588}
   currentDirection: {x: 0, y: 0}
   PlayerOneDashParticleSystem: {fileID: 45961300}
@@ -14750,7 +14750,7 @@ MonoBehaviour:
   speed: 16
   speedMultiplier: 1.5
   inputCooldown: 0.1
-  wallPrefab: {fileID: 530373548505962340, guid: c2ad141424aa63344915e9a6da77464e, type: 3}
+  wallPrefab: {fileID: 6803607064057044340, guid: 89805b0ea71078d47b7c1a2c058707cf, type: 3}
   menuFunctionality: {fileID: 91849588}
   currentDirection: {x: 0, y: 0}
   PlayerOneDashParticleSystem: {fileID: 45961300}
