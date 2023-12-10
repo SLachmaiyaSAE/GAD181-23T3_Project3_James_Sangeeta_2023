@@ -146,6 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   phaseDuration: 5
   flashInterval: 0.5
+  phaseUIManager: {fileID: 0}
+  phaseParticleSystem: {fileID: 0}
 --- !u!225 &2386891562688074560
 CanvasGroup:
   m_ObjectHideFlags: 0
