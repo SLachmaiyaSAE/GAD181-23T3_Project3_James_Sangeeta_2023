@@ -47,7 +47,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadSceneAsync(7);
     }
-        public void Level8()
+    public void Level8()
     {
         SceneManager.LoadSceneAsync(8);
     }
