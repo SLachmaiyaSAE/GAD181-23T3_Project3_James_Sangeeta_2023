@@ -8,11 +8,10 @@ public class PhaseAbilityPickup : MonoBehaviour
     [SerializeField] private float flashInterval = 0.5f;
 
     public PhaseUIManager phaseUIManager;
-    public GameObject phaseParticleSystem;
 
     private void Start()
     {
-        phaseParticleSystem.gameObject.SetActive(false);
+
     }
 
     private void OnTriggerEnter2D(Collider2D otherCollider)
@@ -29,7 +28,6 @@ public class PhaseAbilityPickup : MonoBehaviour
 
             //destroy the pickup object.
             Destroy(gameObject);
-            phaseParticleSystem.gameObject.SetActive(true);
             PhaseUIManager.Instance.UsePhase(1);
         }
 
@@ -45,7 +43,6 @@ public class PhaseAbilityPickup : MonoBehaviour
 
             //destroy the pickup object.
             Destroy(gameObject);
-            phaseParticleSystem.gameObject.SetActive(true);
             PhaseUIManager.Instance.UsePhase(2);
         }
     }
