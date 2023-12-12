@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Scenes/Levels/Level_5.unity
     guid: e492dd8649576a04bba01d7740af3759
   - enabled: 1
+    path: Assets/Scenes/Scenes/Levels/Level_6.unity
+    guid: 2b6551e74a497d544920ea449f9806f2
+  - enabled: 0
     path: Assets/Prefabs/Scenes/Levels/Level_6.unity
     guid: 43b8f65ad3fa9b74bb8699cf09c20553
   - enabled: 0
